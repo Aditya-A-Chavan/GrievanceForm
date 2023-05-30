@@ -102,7 +102,7 @@ def admin_login():
 @app.route ('/download-ticket-data', methods=['GET', 'POST'])
 @login_required
 def download_ticket_data():
-    return send_file(r'D:\Adi Autocad\PYthon QR\ticket_data.txt', as_attachment=True)
+    return send_file('/ticket_data.txt', as_attachment=True)
 
 @app.route('/logout')
 def logout():
