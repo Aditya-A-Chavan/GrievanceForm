@@ -3,7 +3,7 @@ from flask import Flask, request, session, render_template, send_file, redirect,
 import random
 from functools import wraps
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='templates')
 
 def validate_email(email):
     pattern = r'^[\w\.-]+@[\w\.-]+\.\w+$'
