@@ -3,6 +3,9 @@ from flask import Flask, request, session, render_template, send_file, redirect,
 import random
 from functools import wraps
 
+api_endpoint = 'https://api.jsonbin.io/b'
+api_key = '$2b$10$4qTEJKdDDwqqjyEM26JPnulWcmzHo8M/bnNjQnlAUszyeM5fAKQNW'
+
 app = Flask(__name__, template_folder='templates')
 
 def validate_email(email):
@@ -54,18 +57,18 @@ def form():
         
         
         ticket_number = random.randint(1000, 9999)
-       
-
-       
-        form_data = f"Name: {name}\nContact Number: {contact}\nEmail ID: {email}\nID Number: {id_number}\nRoll Number: {roll_number}\nClass & Division: {class_div}\nGrievance: {grievance}"
-
         
-        with open("ticket_data.txt", "a") as file:
-            file.write(f"{ticket_number}\n{form_data}\n\n")
-
-        return render_template('ticket.html', ticket_number=ticket_number)
-
-    return render_template('form.html', error_message=error_message)
+        data = {
+        'ticket_number': ticket_number,
+        'name': name,
+        'contact_number': contact_number,
+        'email': email,
+        'id_number': id_number,
+        'grievance': grievance
+    }
+       
+response = requests.post(api_endpoint, json=data, headers={'secret-key': api_key})
+return redirect(f'/ticket/{ticket_number}')
 
 
 #login Sequences below is as follows
