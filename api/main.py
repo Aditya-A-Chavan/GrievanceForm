@@ -93,7 +93,7 @@ def admin_login():
 
         if username == admin_username and password == admin_password:
             session['logged_in'] = True
-            return render_template('download-ticket-data.html')
+            return render_template('TEST.html')
         
         else:
             error_message = "Wrond Credentials \n Invalid Username or Password"
