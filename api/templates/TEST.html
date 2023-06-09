@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Error</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        h1 {
+            color: #ff0000;
+            font-size: 72px;
+        }
+        p {
+            font-size: 24px;
+        }
+        button[type="submit"]{
+            display: inline-block;
+            padding: 6px 20px;
+            font-weight: bold;
+            border: 1px solid #4f4f4f;
+            border-radius: 6px;
+            transition: all 0.2s ease-in;
+            position: relative;
+            overflow: hidden;
+            font-size: 19px;
+            color: black;
+            z-index: 1;
+            margin: 10px;
+        }
+
+        button[type="submit"]:before{
+            content: "";
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%) scaleY(1) scaleX(1.25);
+            top: 100%;
+            width: 140%;
+            height: 180%;
+            background-color: rgba(0, 0, 0, 0.05);
+            border-radius: 75%;
+            display: block;
+            transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+            z-index: -1;
+            padding: 10%;
+        }
+
+        button[type="submit"]:after{
+            content: "";
+            position: absolute;
+            left: 55%;
+            transform: translateX(-50%) scaleY(1) scaleX(1.45);
+            top: 180%;
+            width: 160%;
+            height: 190%;
+            background-color: #4CAF50;
+            border-radius: 75%;
+            display: block;
+            transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+            z-index: -1;
+        }
+
+        button[type="submit"]:hover{
+            cursor: pointer;
+            color: #000000;
+            border: 1px solid #4CAF50;
+        }
+
+        button[type="submit"]:hover:before {
+            cursor: pointer;
+            top: -35%;
+            background-color: #4CAF50;
+            transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+        }
+
+        button[type="submit"]:hover:after {
+            cursor: pointer;
+            top: -45%;
+            background-color: #39bda7;
+            transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+        }       
+    </style>
+</head>
+<body>
+    <h1>Error</h1>
+    <p>TEST THING</p>
+</body>
+</html>
+<form action="\" method="GET">
+    <button type="submit">Get Back to the Grievance Form</button>
+</form>
+<form action="\admin-login.html" method="GET">
+    <button type="submit">Get Back to Admin Login</button>
+</form>
+</body>
+</html>
