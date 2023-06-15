@@ -5,6 +5,8 @@ from functools import wraps
 
 app = Flask(__name__)
 
+app.secret_key = 'your_secret_key'
+
 def validate_email(email):
     pattern = r'^[\w\.-]+@[\w\.-]+\.\w+$'
     return re.match(pattern, email)
@@ -68,8 +70,7 @@ def form():
     return render_template('form.html', error_message=error_message)
 
 
-
-#login Sequences below is as follows
+#login Sequences below is "assssss" follows
 
 admin_username = "admin"
 admin_password = "admin"
@@ -91,7 +92,11 @@ def admin_login():
 
         if username == admin_username and password == admin_password:
             session['logged_in'] = True
-            return render_template('TEST.html')
+            return render_template('download-ticket-data.html')
+        
+        #now this, this took me around 2 hrs to do. first html wouldnt echo the username and password back to python and when it started to 
+#echo, pythons script for rendering download-ticket-data.html just wouldn't work ffs
+#now finally all this is working and i am gonna work on putting login sessions in this
         
         else:
             error_message = "Wrond Credentials \n Invalid Username or Password"
@@ -103,13 +108,17 @@ def admin_login():
 @app.route ('/download-ticket-data', methods=['GET', 'POST'])
 @login_required
 def download_ticket_data():
-    return send_file(r'D:\Adi Autocad\PYthon QR\ticket_data.txt', as_attachment=True)
+    return send_file('\ticket_data.txt', as_attachment=True)
 
 @app.route('/logout')
 def logout():
     session.pop('logged_in', None)
     return redirect('/')
 
+#reading login sesssions documentation and understanding them took me 2 hrs
+#implementing it took me 30 sweet minutes <3 <3
+#i hope i dont forget to remove these comments before showing it to sir
+#just in case i forget: Sir sorry i was bored. please ignore these
 
 
 if __name__ == '__main__':
