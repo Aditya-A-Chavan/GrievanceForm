@@ -94,9 +94,8 @@ def admin_login():
             session['logged_in'] = True
             return render_template('download-ticket-data.html')
         
-        #now this, this took me around 2 hrs to do. first html wouldnt echo the username and password back to python and when it started to 
+#now this, this took me around 2 hrs to do. first html wouldnt echo the username and password back to python and when it started to
 #echo, pythons script for rendering download-ticket-data.html just wouldn't work ffs
-#now finally all this is working and i am gonna work on putting login sessions in this
         
         else:
             error_message = "Wrond Credentials \n Invalid Username or Password"
@@ -117,9 +116,6 @@ def logout():
 
 #reading login sesssions documentation and understanding them took me 2 hrs
 #implementing it took me 30 sweet minutes <3 <3
-#i hope i dont forget to remove these comments before showing it to sir
-#just in case i forget: Sir sorry i was bored. please ignore these
-
 
 if __name__ == '__main__':
     app.run(debug=False)
