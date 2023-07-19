@@ -1,5 +1,5 @@
 # GrievanceForm
-This is a basic Grievance form I made. although theirs still some work pending. Due to database connection issues i have modified the code so as to store the data into a text file and save it to the local directory(Just A Temporary Solution. Still working on database linkage). Also attached some screenshots since the vercel hosted app wouldn't go past the data collection form without database linkage.
+This is a basic Grievance form I made. although theres still some work pending. Due to database connection issues i have modified the code so as to store the data into a text file and save it to the local directory(Just A Temporary Solution. Still working on database linkage). Also attached some screenshots since the vercel hosted app wouldn't go past the data collection form without database linkage.
 
 ![image](https://github.com/Aditya-A-Chavan/GrievanceForm/assets/130660675/8cfa8311-90fe-46a5-b008-13527e7a9083)
 
